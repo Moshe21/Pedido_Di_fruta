@@ -1,0 +1,135 @@
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+background-color: #f0e6d2; /* Light beige background */
+color: #333;
+}
+
+header {
+background-color: #800000; /* Brown/Burgundy header */
+color: white;
+padding: 1.5em 0;
+text-align: center;
+}
+
+main {
+display: flex;
+justify-content: space-around;
+padding: 20px;
+flex-wrap: wrap;
+}
+
+section {
+background-color: #f8f0e3; /* Slightly lighter beige section background */
+padding: 20px;
+margin: 10px;
+border-radius: 8px;
+box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+flex: 1;
+min-width: 300px;
+}
+
+h2, h3 {
+color: #800000; /* Brown/Burgundy headings /
+border-bottom: 1px solid #d2b48c; / Light brown border */
+padding-bottom: 10px;
+margin-bottom: 20px;
+}
+
+.menu-category h3 {
+margin-top: 0;
+}
+
+.menu-item {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 12px 0;
+border-bottom: 1px dashed #d2b48c; /* Light brown dashed line */
+}
+
+.menu-item:last-child {
+border-bottom: none;
+}
+
+.item-name {
+font-weight: bold;
+color: #8b0000; /* Dark red/Maroon item name */
+flex-grow: 1;
+}
+
+.item-price {
+margin-left: 15px;
+font-size: 1.1em;
+color: #8b0000; /* Dark red/Maroon price */
+}
+
+button.add-to-cart {
+background-color: #ffa500; /* Orange/Peach add to cart button */
+color: white;
+border: none;
+padding: 10px 15px;
+border-radius: 8px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+button.add-to-cart:hover {
+background-color: #ff8c00; /* Darker orange on hover */
+}
+
+#cart {
+background-color: #f8f0e3; /* Slightly lighter beige cart background */
+}
+
+#cart h2 {
+color: #800000; /* Brown/Burgundy cart heading */
+}
+
+#cart-list {
+list-style: none;
+padding: 0;
+}
+
+#cart-list li {
+display: flex;
+justify-content: space-between;
+padding: 10px 0;
+border-bottom: 1px dotted #d2b48c; /* Light brown dotted line */
+color: #333;
+}
+
+#cart-list li:last-child {
+border-bottom: none;
+}
+
+#cart-total {
+font-weight: bold;
+font-size: 1.2em;
+color: #8b0000; /* Dark red/Maroon total */
+padding-top: 15px;
+}
+
+#cart p {
+margin-top: 15px;
+border-top: 1px solid #d2b48c; /* Light brown top border */
+padding-top: 10px;
+}
+
+#checkout-button {
+background-color: #000080; /* Dark Blue/Navy checkout button */
+color: white;
+border: none;
+padding: 12px 20px;
+border-radius: 8px;
+cursor: pointer;
+margin-top: 20px;
+width: 100%;
+font-size: 1.1em;
+transition: background-color 0.3s ease;
+}
+
+#checkout-button:hover {
+background-color: #191970; /* Darker blue on hover */
+}
