@@ -1,135 +1,202 @@
 body {
-font-family: Arial, sans-serif;
-margin: 0;
-padding: 0;
-background-color: #f0e6d2; /* Light beige background */
-color: #333;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FFFDD0; /* Cream - Fondo principal */
+    color: #333;
+    /* Añadir un padding inferior al body para que el contenido no quede oculto detrás del botón fijo */
+    padding-bottom: 80px; /* Espacio para el botón de pedido fijo */
 }
 
 header {
-background-color: #800000; /* Brown/Burgundy header */
-color: white;
-padding: 1.5em 0;
-text-align: center;
+    background-color: #D76705; /* Dark Orange/Brownish Orange - Encabezado */
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-container {
+    margin-bottom: 10px;
+}
+
+.logo {
+    max-width: 150px; /* Tamaño un poco más pequeño para el logo en móviles */
+    height: auto;
+}
+
+header h1 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.6em; /* Fuente más pequeña para móviles */
+    color: #FFFDD0;
 }
 
 main {
-display: flex;
-justify-content: space-around;
-padding: 20px;
-flex-wrap: wrap;
+    display: flex;
+    flex-direction: column; /* Por defecto, las secciones se apilan en móviles */
+    align-items: center; /* Centra las secciones apiladas */
+    padding: 15px; /* Padding reducido para móviles */
+    flex-wrap: wrap; /* Sigue permitiendo el wrap si se da el caso */
 }
 
 section {
-background-color: #f8f0e3; /* Slightly lighter beige section background */
-padding: 20px;
-margin: 10px;
-border-radius: 8px;
-box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-flex: 1;
-min-width: 300px;
+    background-color: #FFFFFF; /* Blanco para las secciones para que resalten del fondo */
+    padding: 15px; /* Padding reducido para secciones */
+    margin: 10px 0; /* Margen superior/inferior para separar secciones */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 95%; /* Las secciones ocupan casi todo el ancho */
+    min-width: unset; /* Permite que la sección se haga más pequeña que 300px si es necesario */
+    box-sizing: border-box; /* Incluir padding y border en el width */
 }
 
 h2, h3 {
-color: #800000; /* Brown/Burgundy headings /
-border-bottom: 1px solid #d2b48c; / Light brown border */
-padding-bottom: 10px;
-margin-bottom: 20px;
-}
-
-.menu-category h3 {
-margin-top: 0;
+    color: #8BC34A; /* Green - Títulos de sección y categoría */
+    border-bottom: 1px solid #D76705;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+    font-size: 1.3em; /* Fuentes más pequeñas para títulos */
 }
 
 .menu-item {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 12px 0;
-border-bottom: 1px dashed #d2b48c; /* Light brown dashed line */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px dashed #FFAE00;
+    font-size: 0.95em; /* Fuente ligeramente más pequeña para items */
 }
 
 .menu-item:last-child {
-border-bottom: none;
+    border-bottom: none;
 }
 
 .item-name {
-font-weight: bold;
-color: #8b0000; /* Dark red/Maroon item name */
-flex-grow: 1;
+    font-weight: bold;
+    color: #D76705;
+    flex-grow: 1;
 }
 
 .item-price {
-margin-left: 15px;
-font-size: 1.1em;
-color: #8b0000; /* Dark red/Maroon price */
+    margin-left: 10px;
+    font-size: 1em;
+    color: #E24AFD;
 }
 
-button.add-to-cart {
-background-color: #ffa500; /* Orange/Peach add to cart button */
-color: white;
-border: none;
-padding: 10px 15px;
-border-radius: 8px;
-cursor: pointer;
-transition: background-color 0.3s ease;
+button {
+    background-color: #FFAE00;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-button.add-to-cart:hover {
-background-color: #ff8c00; /* Darker orange on hover */
-}
-
-#cart {
-background-color: #f8f0e3; /* Slightly lighter beige cart background */
-}
-
-#cart h2 {
-color: #800000; /* Brown/Burgundy cart heading */
+button:hover {
+    background-color: #D76705;
 }
 
 #cart-list {
-list-style: none;
-padding: 0;
+    list-style: none;
+    padding: 0;
 }
 
 #cart-list li {
-display: flex;
-justify-content: space-between;
-padding: 10px 0;
-border-bottom: 1px dotted #d2b48c; /* Light brown dotted line */
-color: #333;
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px dotted #FFAE00;
 }
 
 #cart-list li:last-child {
-border-bottom: none;
+    border-bottom: none;
 }
 
 #cart-total {
-font-weight: bold;
-font-size: 1.2em;
-color: #8b0000; /* Dark red/Maroon total */
-padding-top: 15px;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #E24AFD;
 }
 
 #cart p {
-margin-top: 15px;
-border-top: 1px solid #d2b48c; /* Light brown top border */
-padding-top: 10px;
+    margin-top: 15px;
+    border-top: 1px solid #FFAE00; /* Borde superior con el color naranja */
+    padding-top: 10px;
 }
 
+/* Estilo del Botón de Pedir Fijo en la Parte Inferior */
 #checkout-button {
-background-color: #000080; /* Dark Blue/Navy checkout button */
-color: white;
-border: none;
-padding: 12px 20px;
-border-radius: 8px;
-cursor: pointer;
-margin-top: 20px;
-width: 100%;
-font-size: 1.1em;
-transition: background-color 0.3s ease;
+    background-color: #D76705; /* Color principal del botón */
+    color: white;
+    position: fixed; /* Hace que el botón se quede en su posición al hacer scroll */
+    bottom: 0; /* Lo fija en la parte inferior de la ventana */
+    left: 0; /* Lo alinea a la izquierda */
+    width: 100%; /* Ocupa todo el ancho */
+    padding: 15px 20px; /* Aumenta el padding para que sea más fácil de tocar */
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    border-radius: 0; /* Elimina los bordes redondeados para que sea una barra completa */
+    text-align: center;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Sombra superior para que destaque */
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
 }
 
 #checkout-button:hover {
-background-color: #191970; /* Darker blue on hover */
+    background-color: #C05800; /* Tono más oscuro al pasar el ratón */
+}
+
+
+/* Media Query para pantallas más grandes (Tabletas y Escritorio) */
+@media (min-width: 768px) {
+    header h1 {
+        font-size: 1.8em; /* Restaurar tamaño de fuente para escritorio */
+    }
+
+    .logo {
+        max-width: 180px; /* Restaurar tamaño de logo para escritorio */
+    }
+
+    main {
+        flex-direction: row; /* Las secciones se muestran en fila en escritorio */
+        justify-content: space-around;
+        align-items: flex-start; /* Alinea los elementos al inicio (arriba) */
+        padding: 20px; /* Restaurar padding para escritorio */
+        padding-bottom: 20px; /* Eliminar el padding extra del body para el botón fijo en desktop */
+    }
+
+    section {
+        flex: 1; /* Las secciones ocupan espacio equitativo */
+        min-width: 300px; /* Restaurar el ancho mínimo para escritorio */
+        width: unset; /* Deshacer el 95% width para escritorio */
+        padding: 20px; /* Restaurar padding para secciones */
+    }
+
+    h2, h3 {
+        font-size: 1.5em; /* Restaurar tamaño de fuente para títulos */
+    }
+
+    .menu-item {
+        font-size: 1em; /* Restaurar tamaño de fuente para items */
+    }
+
+    /* El botón de checkout vuelve a su posición normal dentro de la sección #cart */
+    #checkout-button {
+        position: static; /* Vuelve a la posición normal dentro del flujo del documento */
+        margin-top: 20px; /* Margen superior para separarlo del contenido del carrito */
+        width: 100%; /* Vuelve a ocupar el 100% de su contenedor padre */
+        border-radius: 8px; /* Restaura los bordes redondeados */
+        box-shadow: none; /* Elimina la sombra */
+        padding: 10px; /* Restaura el padding original */
+        z-index: unset; /* Elimina el z-index */
+    }
+
+    body {
+        padding-bottom: 0; /* Eliminar el padding inferior del body en escritorio */
+    }
 }
