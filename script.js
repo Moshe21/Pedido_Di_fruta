@@ -57,6 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         whatsappMessage += `\n El valor de tu nergía frutal acumulada es: $${totalOrderPrice.toLocaleString('es-CO')}\n`;
+        whatsappMessage += `\n¡Gracias por tu apoyo al Frutiverso!`;
 
         // Encode the message for the URL
         const encodedMessage = encodeURIComponent(whatsappMessage);
@@ -78,3 +79,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
     updateCartDisplay(); // Initial display of the empty cart
 });
+
+// Modified checkout button event listener
+    checkoutButton.addEventListener('click', () => {
+        if (cart.length === 0) {
+            alert('Tu carrito está vacío. ¡Agrega algunos productos!');
+            return;
+        }
+
+        // Prepare the message for WhatsApp
+        let whatsappMessage = "¡Hola! Me gustaría hacer un pedido:\n\n";
+        let totalOrderPrice = 0;
+
+        cart.forEach(item => {
+            whatsappMessage += `- ${item.name} x${item.quantity} ($${(item.price * item.quantity).toLocaleString('es-CO')})\n`;
+            totalOrderPrice += item.price * item.quantity;
+        });
+
+        whatsappMessage += `\nTotal a pagar: $${totalOrderPrice.toLocaleString('es-CO')}\n`;
+        whatsappMessage += `\n¡Gracias!`;
+
+        // Encode the message for the URL
+        const encodedMessage = encodeURIComponent(whatsappMessage);
+
+        // WhatsApp number
+        const phoneNumber = '+57 3142707164'; // Your WhatsApp number
+
+        // Construct the WhatsApp URL
+        const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+        // Open WhatsApp
+        window.open(whatsappURL, '_blank');
+
+        // Optional: Clear the cart after sending the order
+        alert('Serás redirigido a WhatsApp para finalizar tu pedido.');
+        cart = []; // Clear the cart
+        updateCartDisplay();
+    });
