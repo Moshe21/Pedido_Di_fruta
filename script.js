@@ -43,12 +43,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Modified checkout button event listener
     checkoutButton.addEventListener('click', () => {
         if (cart.length === 0) {
-            alert('Tu carrito está vacío. ¡Agrega algunos productos!');
+            alert('Tu equipo frutal está incompleto. ¡Suma héroes a tu misión saludable!');
             return;
         }
 
         // Prepare the message for WhatsApp
-        let whatsappMessage = "¡Hola! Me gustaría hacer un pedido:\n\n";
+        let whatsappMessage = "¡Llamando al escuadrón frutal! Estoy listo para pedir mi arsenal vitamínico:\n\n";
         let totalOrderPrice = 0;
 
         cart.forEach(item => {
@@ -56,8 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
             totalOrderPrice += item.price * item.quantity;
         });
 
-        whatsappMessage += `\nTotal a pagar: $${totalOrderPrice.toLocaleString('es-CO')}\n`;
-        whatsappMessage += `\n¡Gracias!`;
+        whatsappMessage += `\n El valor de tu nergía frutal acumulada es: $${totalOrderPrice.toLocaleString('es-CO')}\n`;
 
         // Encode the message for the URL
         const encodedMessage = encodeURIComponent(whatsappMessage);
@@ -72,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window.open(whatsappURL, '_blank');
 
         // Optional: Clear the cart after sending the order
-        alert('Serás redirigido a WhatsApp para finalizar tu pedido.');
+        alert('Prepárate para contactar la base secreta del Frutiverso por WhatsApp y completar tu misión.');
         cart = []; // Clear the cart
         updateCartDisplay();
     });
