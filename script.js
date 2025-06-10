@@ -43,12 +43,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Modified checkout button event listener
     checkoutButton.addEventListener('click', () => {
         if (cart.length === 0) {
-            alert('Tu equipo frutal está incompleto. ¡Suma héroes a tu misión saludable!');
+            alert('🍇 Tu equipo frutal está incompleto. ¡Suma héroes a tu misión saludable! 🍓🦸‍♂️');
             return;
         }
 
         // Prepare the message for WhatsApp
-        let whatsappMessage = "¡Llamando al escuadrón frutal! Estoy listo para pedir mi arsenal vitamínico:\n\n";
+        let whatsappMessage = "📡 ¡Llamando al escuadrón frutal! Estoy listo para pedir mi arsenal vitamínico: 🍍🍌🍉\n\n";
         let totalOrderPrice = 0;
 
         cart.forEach(item => {
@@ -56,8 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
             totalOrderPrice += item.price * item.quantity;
         });
 
-        whatsappMessage += `\n El valor de tu nergía frutal acumulada es: $${totalOrderPrice.toLocaleString('es-CO')}\n`;
-        whatsappMessage += `\n¡Gracias por tu apoyo al Frutiverso!`;
+        whatsappMessage += `\n ⚡ El valor de tu energía frutal acumulada es: 💰🍒 $${totalOrderPrice.toLocaleString('es-CO')}\n`;
+        whatsappMessage += `\n🙌 ¡Gracias por tu apoyo al Frutiverso! 🌈🍊`;
 
         // Encode the message for the URL
         const encodedMessage = encodeURIComponent(whatsappMessage);
@@ -68,11 +68,11 @@ document.addEventListener('DOMContentLoaded', () => {
         // Construct the WhatsApp URL
         const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
+        alert('🛡️ Prepárate para contactar la base secreta del Frutiverso por WhatsApp y completar tu misión. 📲🍏');
         // Open WhatsApp
         window.open(whatsappURL, '_blank');
 
         // Optional: Clear the cart after sending the order
-        alert('Prepárate para contactar la base secreta del Frutiverso por WhatsApp y completar tu misión.');
         cart = []; // Clear the cart
         updateCartDisplay();
     });
@@ -80,39 +80,3 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCartDisplay(); // Initial display of the empty cart
 });
 
-// Modified checkout button event listener
-    checkoutButton.addEventListener('click', () => {
-        if (cart.length === 0) {
-            alert('Tu carrito está vacío. ¡Agrega algunos productos!');
-            return;
-        }
-
-        // Prepare the message for WhatsApp
-        let whatsappMessage = "¡Hola! Me gustaría hacer un pedido:\n\n";
-        let totalOrderPrice = 0;
-
-        cart.forEach(item => {
-            whatsappMessage += `- ${item.name} x${item.quantity} ($${(item.price * item.quantity).toLocaleString('es-CO')})\n`;
-            totalOrderPrice += item.price * item.quantity;
-        });
-
-        whatsappMessage += `\nTotal a pagar: $${totalOrderPrice.toLocaleString('es-CO')}\n`;
-        whatsappMessage += `\n¡Gracias!`;
-
-        // Encode the message for the URL
-        const encodedMessage = encodeURIComponent(whatsappMessage);
-
-        // WhatsApp number
-        const phoneNumber = '+57 3142707164'; // Your WhatsApp number
-
-        // Construct the WhatsApp URL
-        const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-
-        // Open WhatsApp
-        window.open(whatsappURL, '_blank');
-
-        // Optional: Clear the cart after sending the order
-        alert('Serás redirigido a WhatsApp para finalizar tu pedido.');
-        cart = []; // Clear the cart
-        updateCartDisplay();
-    });
