@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const encodedMessage = encodeURIComponent(whatsappMessage);
 
         // WhatsApp number
-        const phoneNumber = '+57 311 5819568'; // Your WhatsApp number
+        const phoneNumber = '311 5819568'; // Your WhatsApp number
 
         // Construct the WhatsApp URL
         const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
